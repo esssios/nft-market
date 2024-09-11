@@ -43,7 +43,7 @@ solidity | ether.js | hardhat | react | ts | node.js | ipfs | remix
   # replace the NFT_CONTRACT_ADDRESS in the .env file
 
   # run backend server
-  pnpm run server
+  pnpm run dev
 
   # then you can test the api in postman
   # successful response:
