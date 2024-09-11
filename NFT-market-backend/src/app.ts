@@ -22,12 +22,21 @@ app.get('/', (req, res) => {
   res.send('Hello, TypeScript and Express!');
 });
 
+/**
+ * Upload Image to IPFS and Mint NFT
+ * @param to string
+ * @param title string
+ * @param description string
+ * @param file
+ * 
+ * 'Content-Type': 'multipart/form-data'
+ */
 app.post('/upload', (req, res) => {
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send('No files were uploaded.');
   }
   const { title, description, to } = req.body;
-
+  console.log(req.files.file);
   const file = req.files.file as UploadedFile;
   const fileName = file.name;
   const SAVE_PATH = `${FILE_SAVE_PATH}/${file.name}`;

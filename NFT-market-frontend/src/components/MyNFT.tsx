@@ -48,10 +48,12 @@ const MyNFT = () => {
       const { tokenOfOwnerByIndex } = await nftOperationFunc();
       try {
         const length = await balanceOf(walletAddress); // 获取用户地址下nft数量
+        console.log("length", length);
         const tokenIds: number[] = [];
 
         for (let i = 0; i < length; i++) {
           const tokenId: number = await tokenOfOwnerByIndex(walletAddress, i); // 获取nft的tokenId
+          console.log("tokenId", tokenId);
           tokenIds.push(tokenId);
         }
 
